@@ -188,7 +188,14 @@ q.about-text {
     color: var(--primary-color);
 }
 
-/* --- 6. Szolgáltatások (Services) --- */
+section-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
 .services { padding: 80px 10%; background: var(--bg-color); text-align: center; }
 
 .service-grid {
@@ -291,4 +298,78 @@ footer {
     }
     .about-text { font-size: 1.1rem; }
     .service-grid { gap: 20px; }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 15px 5%;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        padding: 0;
+        justify-content: center;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .hero-new {
+        padding: 40px 5%;
+        text-align: center;
+        min-height: auto;
+    }
+
+    .hero-flex-container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .about-section, .services {
+        padding: 60px 5%;
+    }
+
+    .about-container, .service-card.quote-style {
+        padding: 30px 20px;
+        box-shadow: 10px 10px 0px var(--bg-color);
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .hero-visuals, .slideshow-wrapper, .mini-video iframe {
+        width: 100% !important;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .mini-video iframe {
+        aspect-ratio: 9 / 16;
+        height: 450px;
+    }
 }
