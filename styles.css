@@ -1,9 +1,8 @@
-/* --- 1. Alapbeállítások & Színpaletta --- */
 :root {
-    --bg-color: #e5dccb;      /* A logó háttérszíne */
-    --light-bg: #f4efe6;     /* Lágyabb krém a váltakozó szekcióknak */
-    --primary-color: #6d4c31; /* A logó barna színe */
-    --text-color: #4a3422;    /* Sötétebb barna a szövegnek */
+    --bg-color: #e5dccb;
+    --light-bg: #f4efe6;
+    --primary-color: #6d4c31;
+    --text-color: #4a3422;
     --white: #ffffff;
 }
 
@@ -21,7 +20,6 @@ body {
     overflow-x: hidden;
 }
 
-/* --- 2. Navigáció --- */
 nav {
     display: flex;
     justify-content: space-between;
@@ -56,7 +54,6 @@ nav ul li a {
 
 nav ul li a:hover { color: var(--primary-color); }
 
-/* --- 3. Hero Szekció --- */
 .hero-new {
     padding: 60px 10%;
     background: linear-gradient(rgba(229, 220, 203, 0.8), rgba(229, 220, 203, 0.8)), 
@@ -97,7 +94,6 @@ nav ul li a:hover { color: var(--primary-color); }
     margin-top: 30px;
 }
 
-/* --- 4. Gombok --- */
 .btn {
     display: inline-block;
     background: var(--primary-color);
@@ -125,39 +121,86 @@ nav ul li a:hover { color: var(--primary-color); }
     color: var(--white);
 }
 
-/* --- 5. Szekciók --- */
 .about-section {
     padding: 100px 10%;
-    background: var(--white);
+    background-color: var(--white);
+    position: relative;
     text-align: center;
 }
 
-.about-container {
-    max-width: 850px;
-    margin: 0 auto;
+.about-profile-img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(109, 76, 49, 0.2);
 }
 
-.about-section h2, .services h2, .contact h2 {
-    font-size: 2.2rem;
+.about-profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-container, .service-card.quote-style {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--light-bg);
+    padding: 60px 40px;
+    border-radius: 50px 5px 50px 5px;
+    box-shadow: 20px 20px 0px var(--bg-color);
+    border: 1px solid rgba(109, 76, 49, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-icon {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    opacity: 0.3;
+}
+
+.about-section h2, .services h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
     margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+q.about-text {
+    display: inline-block;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    font-style: italic;
+    max-width: 700px;
+    quotes: "„" "”";
+}
+
+.about-signature {
+    margin-top: 30px;
+    font-family: 'Georgia', serif;
+    font-size: 1.5rem;
+    font-weight: bold;
     color: var(--primary-color);
 }
 
+/* --- 6. Szolgáltatások (Services) --- */
 .services { padding: 80px 10%; background: var(--bg-color); text-align: center; }
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
     margin-top: 40px;
 }
 
-.service-card {
+.service-card.quote-style {
     background: var(--white);
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(109, 76, 49, 0.05);
-    transition: 0.3s;
+    box-shadow: 10px 10px 0px var(--primary-color);
 }
 
 .service-card i {
@@ -166,7 +209,7 @@ nav ul li a:hover { color: var(--primary-color); }
     margin-bottom: 20px;
 }
 
-/* --- 6. Kapcsolat --- */
+.service-card.quote-style:hover { transform: translateY(-5px); }
 .contact { padding: 80px 10%; text-align: center; background: var(--white); }
 
 .contact-links {
@@ -190,10 +233,7 @@ nav ul li a:hover { color: var(--primary-color); }
 }
 
 .contact-method:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-
 .contact-method i { font-size: 2rem; margin-bottom: 15px; color: var(--primary-color); }
-
-/* --- 7. Slideshow & Video --- */
 .hero-visuals { display: flex; flex-direction: column; gap: 30px; align-items: center; }
 
 .slideshow-wrapper {
@@ -206,10 +246,8 @@ nav ul li a:hover { color: var(--primary-color); }
 }
 
 .slide img { width: 100%; height: 100%; object-fit: cover; }
-
 .mini-video iframe { border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 
-/* --- 8. Footer & Fix elemek --- */
 footer {
     padding: 50px;
     background: var(--primary-color);
@@ -235,7 +273,6 @@ footer {
     text-decoration: none;
 }
 
-/* --- 9. Animációk & Reszponzivitás --- */
 .fade { animation: fadeAnim 1.5s; }
 @keyframes fadeAnim { from {opacity: .6} to {opacity: 1} }
 
@@ -244,4 +281,13 @@ footer {
     .hero-btns { justify-content: center; }
     .hero-content h1 { font-size: 2.5rem; }
     .contact-links { flex-direction: column; align-items: center; }
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        padding: 40px 20px;
+        box-shadow: 10px 10px 0px var(--bg-color);
+    }
+    .about-text { font-size: 1.1rem; }
+    .service-grid { gap: 20px; }
 }
