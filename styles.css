@@ -281,6 +281,60 @@ footer {
     text-decoration: none;
 }
 
+/* --- Árlista Stílusok --- */
+.prices-section {
+    padding: 80px 10%;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.price-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--bg-color);
+    padding-bottom: 10px;
+}
+
+.price-list, .shipping-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.price-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--bg-color);
+}
+
+.shipping-list li {
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.price-note {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .price-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
 .fade { animation: fadeAnim 1.5s; }
 @keyframes fadeAnim { from {opacity: .6} to {opacity: 1} }
 
@@ -301,6 +355,11 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+    .services h2 {
+        font-size: 1.5rem;
+    }
+
     nav {
         flex-direction: column;
         padding: 15px 5%;
