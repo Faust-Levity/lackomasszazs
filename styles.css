@@ -48,11 +48,13 @@ nav ul li a:hover {
 
 /* --- Hero Section --- */
 .hero {
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
-    url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1350&q=80");
-  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  min-height: 80vh; /* Ezt hagyd meg */
+  display: flex;
+  align-items: center;
   padding: 80px 10%;
+  /* A régi background: linear-gradient... sort TÖRÖLD KI! */
 }
 
 .hero-container {
@@ -229,4 +231,181 @@ footer {
 .calendar-placeholder p {
   color: #666;
   font-style: italic;
+}
+
+/* Hero alapbeállítások módosítása */
+.hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Slideshow háttér */
+.slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Behelyezzük a szöveg mögé */
+}
+
+.slide {
+    display: none; /* Alapból elrejtjük */
+    height: 100%;
+    width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Kitölti a teret torzítás nélkül */
+}
+
+/* Sötétítő réteg, hogy a szöveg olvasható maradjon */
+.slideshow-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7); /* Világos áttetsző réteg */
+}
+
+/* Animáció */
+.fade {
+    animation: fadeAnim 1.5s;
+}
+
+@keyframes fadeAnim {
+    from { opacity: .4 } 
+    to { opacity: 1 }
+}
+
+/* Mobil optimalizálás */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 100vh;
+        padding: 0;
+    }
+    .slideshow-container {
+        width: 100vw;
+    }
+}
+
+/* --- Új Modern Hero Design --- */
+.hero-new {
+    padding: 60px 10%;
+    background-color: #f9fbf9;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-flex-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Két egyenlő oszlop */
+    gap: 50px;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: #2c4c36;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-weight: bold;
+    color: #4a7c59;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-outline {
+    background: transparent !important;
+    border: 2px solid #4a7c59;
+    color: #4a7c59 !important;
+}
+
+/* --- Slideshow mint Tartalom --- */
+.hero-visuals {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.slideshow-wrapper {
+    width: 100%;
+    max-width: 500px;
+    height: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.slide {
+    display: none;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mini-video {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.mini-video iframe {
+    border-radius: 15px;
+    max-height: 400px;
+}
+
+/* --- Mobil Nézet --- */
+@media (max-width: 992px) {
+    .hero-flex-container {
+        grid-template-columns: 1fr; /* Egy oszlop mobilra */
+        text-align: center;
+    }
+    .hero-btns {
+        justify-content: center;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-new {
+        padding: 40px 5%;
+    }
+}
+
+/* --- A régi háttér visszaállítása az új Hero szekcióra --- */
+.hero-new {
+    padding: 60px 10%;
+    /* A korábbi világosított-elmosott háttérkép stílus: */
+    background: 
+        linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
+        url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1350&q=80");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Ez ad egy kis "parallax" hatást görgetésnél */
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
 }

@@ -40,37 +40,42 @@
       </nav>
     </header>
 
-    <section class="hero">
-      <div class="hero-container">
-        <div class="hero-text">
-          <h1>Professzionális masszázs terápia</h1>
-          <p>
-            Az Ön igényeire szabott wellness és regenerálódási szolgáltatások.
-            Szánjon időt a kikapcsolódásra és a gyógyulásra.
-          </p>
-          <a href="#contact" class="btn">Érdeklődjön a lehetőségekről</a>
+<section class="hero-new">
+    <div class="hero-flex-container">
+        <div class="hero-content">
+            <h1>Professzionális Masszázs Terápia</h1>
+            <p class="hero-subtitle">Borsos László – Lepsény</p>
+            <p>Személyre szabott wellness és regenerálódási szolgáltatások az Ön otthonában vagy nálam. Szánjon időt a valódi kikapcsolódásra.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn">Időpontot kérek</a>
+                <a href="#services" class="btn btn-outline">Szolgáltatások</a>
+            </div>
         </div>
-        <div class="hero-video">
-          <iframe
-            src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1412720260518204%2F&show_text=false&width=268&t=0"
-            width="268"
-            height="476"
-            style="border: none; overflow: hidden"
-            scrolling="no"
-            frameborder="0"
-            allowfullscreen="true"
-            allow="
-              autoplay;
-              clipboard-write;
-              encrypted-media;
-              picture-in-picture;
-              web-share;
-            "
-          >
-          </iframe>
+
+        <div class="hero-visuals">
+            <div class="slideshow-wrapper">
+                <div class="slide fade">
+                    <img src="./img/slide_1.jpeg" alt="Borsos László masszázs">
+                </div>
+                <div class="slide fade">
+                    <img src="./img/slide_2.jpeg" alt="Munka közben">
+                </div>
+                <div class="slide fade">
+                    <img src="./img/slide_3.jpeg" alt="Relaxáló környezet">
+                </div>
+            </div>
+            
+
         </div>
-      </div>
-    </section>
+    </div>
+</section>
+
+            <div class="mini-video">
+                 <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1412720260518204%2F&show_text=false&width=268&t=0" 
+                    width="268" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" 
+                    allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                </iframe>
+            </div>
 
     <section id="services" class="services">
       <h2>Wellness Szolgáltatások</h2>
@@ -99,58 +104,27 @@
         a számodra megfelelő időpontot.
       </p>
       <section id="booking" class="booking">
-        <section class="location-options">
-          <h2>Hogyan vehető igénybe a masszázs?</h2>
-          <div class="location-grid">
-            <div class="location-card">
-              <i class="fas fa-home"></i>
-              <h3>Otthoni masszázs</h3>
-              <p>
-                Lepsényben és környékén házhoz megyek. Önnek csak a pihenésre
-                kell figyelnie.
-              </p>
-            </div>
-
-            <p>
-              Válassza ki az Önnek megfelelő szolgáltatást és foglaljon
-              időpontot azonnal!
-            </p>
-
-            <div class="location-card">
-              <i class="fas fa-map-marker-alt"></i>
-              <h3>Helyszíni masszázs</h3>
-              <p>
-                Látogasson el hozzám Lepsénybe, nyugodt és professzionális
-                környezetbe.
-              </p>
-              <br />
-
-              <p>
-                Válassza ki az Önnek megfelelő szolgáltatást és foglaljon
-                időpontot azonnal!
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <div class="calendar-placeholder">
-          <i
-            class="fas fa-calendar-alt"
-            style="font-size: 50px; color: #4a7c59; margin-bottom: 20px"
-          ></i>
-          <p>Itt fog megjelenni az interaktív naptár,</p>
-          <p>ahol a vendég kiválaszthatja a szabad sávokat.</p>
-          <a
-            href="#"
-            class="btn"
-            onclick="alert('Itt nyílna meg a foglalási naptár!')"
-            >Naptár megnyitása (Demo)</a
-          >
+<section id="location" class="location-options">
+    <h2>Hogyan vehető igénybe a masszázs?</h2>
+    <div class="location-grid">
+        <div class="location-card">
+            <i class="fas fa-home"></i>
+            <h3>Otthoni masszázs</h3>
+            <p>Lepsényben és környékén házhoz megyek. Önnek csak a pihenésre kell figyelnie.</p>
         </div>
+        <div class="location-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Helyszíni masszázs</h3>
+            <p>Látogasson el hozzám Lepsénybe, nyugodt és professzionális környezetbe.</p>
+        </div>
+    </div>
+</section>
+
+        
       </section>
       <div class="contact-links">
         <a
-          href="https://wa.me/36xxxxxxxxx"
+          href="https://wa.me/36307579314"
           class="contact-method"
           target="_blank"
         >
@@ -183,4 +157,21 @@
       </p>
     </footer>
   </body>
+
+<script>
+  let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let slides = document.getElementsByClassName("slide");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(showSlides, 5000); // 5 másodpercenként vált
+}
+</script>
+
 </html>
