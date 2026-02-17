@@ -352,15 +352,6 @@ footer {
     flex-direction: column;
     align-items: center;
   }
-  .mini-video {
-    max-width: 350px;
-    transform: rotate(2deg);
-    transition: 0.3s;
-  }
-  .mini-video:hover {
-    transform: rotate(0deg) scale(1.05);
-  }
-}
 
 @media (max-width: 768px) {
   nav {
