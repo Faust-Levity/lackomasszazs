@@ -336,6 +336,12 @@ footer {
   text-decoration: none;
 }
 
+#privacy-link {
+  text-decoration: underline;
+  color: rgba(255, 255, 255, 0.8);
+  display: block;
+}
+
 @media (max-width: 992px) {
   .hero-flex-container {
     grid-template-columns: 1fr;
@@ -351,6 +357,7 @@ footer {
     flex-direction: column;
     align-items: center;
   }
+}
 
 @media (max-width: 768px) {
   nav {
