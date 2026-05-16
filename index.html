@@ -16,7 +16,7 @@
     />
     <meta
       property="og:image"
-      content="https://www.lackomasszazs.hu/img/slide_1.jpeg"
+      content="https://www.lackomasszazs.hu/resources/slide_1.jpeg"
     />
     <meta property="og:url" content="https://www.lackomasszazs.hu" />
     <link rel="canonical" href="https://www.lackomasszazs.hu/" />
@@ -41,7 +41,7 @@
         "@type": "HealthAndBeautyBusiness",
         "name": "Lackó Masszázs",
         "url": "https://www.lackomasszazs.hu",
-        "image": "https://www.lackomasszazs.hu/img/lacko_1.jpg",
+        "image": "https://www.lackomasszazs.hu/resources/lacko_1.jpg",
         "telephone": "+36307579314",
         "priceRange": "4000 Ft - 12000 Ft",
         "address": {
@@ -147,8 +147,8 @@
             <section aria-label="Képek a masszázsról" class="slideshow-wrapper">
               <div class="slide fade">
                 <img
-                  src="./img/slide_1.webp"
-                  srcset="./img/slide_1.webp 640w"
+                  src="./resources/slide_1.webp"
+                  srcset="./resources/slide_1.webp 640w"
                   sizes="(max-width: 640px) 90vw, 640px"
                   loading="eager"
                   fetchpriority="high"
@@ -160,8 +160,8 @@
               </div>
               <div class="slide fade">
                 <img
-                  src="./img/slide_2.webp"
-                  srcset="./img/slide_2.webp 640w"
+                  src="./resources/slide_2.webp"
+                  srcset="./resources/slide_2.webp 640w"
                   sizes="(max-width: 640px) 90vw, 640px"
                   loading="lazy"
                   decoding="async"
@@ -172,8 +172,8 @@
               </div>
               <div class="slide fade">
                 <img
-                  src="./img/slide_3.webp"
-                  srcset="./img/slide_3.webp 640w"
+                  src="./resources/slide_3.webp"
+                  srcset="./resources/slide_3.webp 640w"
                   sizes="(max-width: 640px) 90vw, 640px"
                   loading="lazy"
                   decoding="async"
@@ -184,8 +184,8 @@
               </div>
               <div class="slide fade">
                 <img
-                  src="./img/slide_4.webp"
-                  srcset="./img/slide_4.webp 640w"
+                  src="./resources/slide_4.webp"
+                  srcset="./resources/slide_4.webp 640w"
                   sizes="(max-width: 640px) 90vw, 640px"
                   loading="lazy"
                   decoding="async"
@@ -196,8 +196,8 @@
               </div>
               <div class="slide fade">
                 <img
-                  src="./img/slide_5.webp"
-                  srcset="./img/slide_5.webp 640w"
+                  src="./resources/slide_5.webp"
+                  srcset="./resources/slide_5.webp 640w"
                   sizes="(max-width: 640px) 90vw, 640px"
                   loading="lazy"
                   decoding="async"
@@ -208,8 +208,8 @@
               </div>
               <div class="slide fade">
                 <img
-                  src="./img/slide_6.webp"
-                  srcset="./img/slide_6.webp 640w"
+                  src="./resources/slide_6.webp"
+                  srcset="./resources/slide_6.webp 640w"
                   sizes="(max-width: 640px) 90vw, 640px"
                   loading="lazy"
                   decoding="async"
@@ -223,19 +223,15 @@
             <div class="mini-video">
               <h2 class="mobile-only-heading">Videóbemutató</h2>
               <div class="shorts-container">
-                <div
-                  id="video-placeholder"
-                  class="video-placeholder"
-                  role="button"
-                  tabindex="0"
-                  aria-label="Videó lejátszása"
-                  data-video-src="https://www.youtube-nocookie.com/embed/SVOmvEAX2DI?autoplay=1&mute=1&controls=1&rel=0"
+                <video
+                  controls
+                  playsinline
+                  preload="metadata"
+                  poster="./resources/slide_1.webp"
                 >
-                  <img src="./img/slide_1.webp" alt="Videóbemutató előnézet" />
-                  <div class="video-play-overlay" aria-hidden="true">
-                    <span class="video-play-icon"></span>
-                  </div>
-                </div>
+                  <source src="./resources/presentation-video.mp4" type="video/mp4" />
+                  A böngészője nem támogatja a beágyazott videó lejátszását.
+                </video>
               </div>
             </div>
           </div>
@@ -246,7 +242,7 @@
         <article class="about-container">
           <figure class="about-profile-img">
             <img
-              src="./img/about_me.webp"
+              src="./resources/about_me.webp"
               loading="lazy"
               decoding="async"
               width="150"
