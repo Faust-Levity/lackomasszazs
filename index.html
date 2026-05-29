@@ -22,18 +22,28 @@
     <link rel="canonical" href="https://lackomasszazs.hu/" />
     <link rel="icon" type="image/png" href="./resources/favicon.png" />
 
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-3ERDPHQFRP"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-3ERDPHQFRP");
-    </script>
+<script>
+  let analyticsLoaded = false;
+
+  function loadAnalytics() {
+    if (analyticsLoaded) return;
+    analyticsLoaded = true;
+
+    const script = document.createElement('script');
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-3ERDPHQFRP";
+    script.async = true;
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-3ERDPHQFRP');
+  }
+
+  window.addEventListener('scroll', loadAnalytics, { once: true });
+  window.addEventListener('mousemove', loadAnalytics, { once: true });
+  window.addEventListener('touchstart', loadAnalytics, { once: true });
+</script>
 
     <script type="application/ld+json">
       {
@@ -144,8 +154,8 @@
 
           <div class="hero-visuals">
             <h2 class="mobile-only-heading">Galéria</h2>
-            <section aria-label="Képek a masszázsról" class="slideshow-wrapper">
-              <div class="slide fade">
+            <section aria-label="Képek a masszázsról" class="slideshow-wrapper" style="display: block;">
+              <div class="slide fade" style="display: block;">
                 <img
                   src="./resources/slide_1.webp"
                   srcset="./resources/slide_1.webp 640w"
