@@ -1,53 +1,128 @@
 <!DOCTYPE html>
 <html lang="hu">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Adatkezelési Tájékoztató | Lackó Masszázs</title>
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-      body { padding: 50px 10%; line-height: 1.8; background-color: #f4efe6; color: #4a3422; }
-      h1, h2 { color: #6d4c31; margin-top: 25px; }
-      .container { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-      .btn-back { margin-top: 30px; display: inline-block; background: #6d4c31; color: white; padding: 10px 25px; text-decoration: none; border-radius: 5px; }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Adatkezelési Tájékoztató</h1>
-      <p><strong>Utoljára frissítve:</strong> 2026. február 16.</p>
 
-      <section>
-        <h2>1. Az adatkezelő adatai</h2>
-        <p>
-          <strong>Név:</strong> Borsos László (E.V.)<br>
-          <strong>Székhely:</strong> 8132 Lepsény<br>
-          <strong>E-mail:</strong> lackomasszazs94@gmail.com<br>
-          <strong>Telefonszám:</strong> +36 30 757 9314
-        </p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adatkezelési Tájékoztató | Lackó Masszázs</title>
+  <meta name="description" content="Tájékoztató a Lackó Masszázs adatkezelési irányelveiről. Tudja meg, hogyan kezeljük személyes adatait és milyen sütiket használunk a weboldalon." />
+  <style>
+    body {
+      padding: 50px 10%;
+      line-height: 1.8;
+      background-color: #f4efe6;
+      color: #4a3422;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
 
-        <h2>2. Gyűjtött adatok és céljuk</h2>
-        <p>
-          Csak olyan személyes adatokat kezelünk (név, telefonszám, e-mail cím), amelyeket Ön önkéntesen ad meg telefonos, WhatsApp-on keresztüli vagy e-mailes megkeresés során. Az adatkezelés célja kizárólag az időpontegyeztetés és a szolgáltatás teljesítése.
-        </p>
+    h1,
+    h2 {
+      color: #6d4c31;
+      margin-top: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-        <h2>3. Sütik (Cookies) és Analitika</h2>
-        <p>
-          Weboldalunk a Google Analytics szolgáltatást használja látogatottsági adatok elemzésére. Ez névtelen adatokat gyűjt (pl. melyik aloldalt nézte meg). Ön ezt a böngészője beállításaiban letilthatja.
-        </p>
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
-        <h2>4. Harmadik fél szolgáltatásai</h2>
-        <p>
-          Az oldalon beágyazott videókat a <strong>YouTube</strong>, a közvetlen üzenetküldést a <strong>WhatsApp</strong>, a közösségi interakciókat a <strong>Facebook</strong> biztosítja. Ezen szolgáltatók saját adatkezelési irányelvekkel rendelkeznek, melyekre Lackó Masszázsnak nincs ráhatása.
-        </p>
+    .btn-back {
+      margin-top: 30px;
+      display: inline-block;
+      background: #6d4c31;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
 
-        <h2>5. Az Ön jogai</h2>
-        <p>
-          Ön bármikor kérheti tárolt adatainak törlését vagy módosítását a megadott e-mail címen.
-        </p>
-      </section>
+    .btn-back:hover {
+      background: #563b26;
+    }
 
-      <a href="index.html" class="btn-back">Vissza a főoldalra</a>
-    </div>
-  </body>
+    section {
+      margin-bottom: 30px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    strong {
+      color: #3f2a1d;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <h1>Adatkezelési Tájékoztató</h1>
+    <p><strong>Utoljára frissítve:</strong> 2026. február 16.</p>
+
+    <section>
+      <h2>1. Az adatkezelő adatai</h2>
+      <p>
+        <strong>Név:</strong> Borsos László (E.V.)<br>
+        <strong>Székhely:</strong> 8132 Lepsény, Deák Ferenc utca 42/a<br>
+        <strong>E-mail:</strong> lackomasszazs94@gmail.com<br>
+        <strong>Telefonszám:</strong> +36 30 757 9314
+      </p>
+    </section>
+
+    <section>
+      <h2>2. Gyűjtött adatok és az adatkezelés célja</h2>
+      <p>Az oldal használata során az alábbi módokon történhet adatkezelés:</p>
+      <ul>
+        <li><strong>Kapcsolatfelvétel:</strong> Az Ön által telefonon, WhatsApp-on vagy e-mailben megadott adatokat
+          (név, telefonszám) kizárólag az időpontegyeztetés és a szolgáltatás teljesítése érdekében tároljuk.</li>
+        <li><strong>Statisztikai adatok:</strong> A Google Analytics segítségével névtelen adatokat gyűjtünk a
+          látogatottságról (pl. böngésző típusa, megtekintett oldalak).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Sütik (Cookies) és Technikai tárolás</h2>
+      <p>Weboldalunk az alábbi technológiákat alkalmazza a jobb felhasználói élmény és a jogi megfelelés érdekében:</p>
+      <ul>
+        <li><strong>LocalStorage:</strong> Egy kisméretű adatot tárolunk az Ön böngészőjében, amely megjegyzi, hogy Ön
+          elfogadta-e a süti-tájékoztatót. Ez nem tartalmaz személyes adatot.</li>
+        <li><strong>Service Worker:</strong> A weboldal gyorsabb betöltése érdekében bizonyos fájlokat (képek, kódok)
+          ideiglenesen tárolunk az Ön eszközén.</li>
+        <li><strong>Google Analytics sütik:</strong> Csak akkor lépnek működésbe, ha Ön a kezdőoldalon az „Elfogadom”
+          gombra kattint.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Harmadik fél szolgáltatásai</h2>
+      <p>Az oldalon használt külső szolgáltatások saját adatkezelési szabályzattal rendelkeznek:</p>
+      <ul>
+        <li><strong>WhatsApp:</strong> Üzenetküldés esetén a WhatsApp Inc. szabályzata érvényes.</li>
+        <li><strong>Facebook:</strong> A profiloldalunk megnyitásakor a Meta Platforms Inc. adatkezelése irányadó.</li>
+        <li><strong>Google Analytics:</strong> A látogatottsági statisztikákat a Google LLC kezeli.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. Adatbiztonság és Jogok</h2>
+      <p>Mindent megteszünk az adatok biztonságos kezelése érdekében. Önnek joga van:</p>
+      <ul>
+        <li>Tájékoztatást kérni adatai kezeléséről.</li>
+        <li>Kérni adatai helyesbítését vagy törlését.</li>
+        <li>Visszavonni hozzájárulását a statisztikai célú adatgyűjtéshez (a böngésző gyorsítótárának törlésével).</li>
+      </ul>
+      <p>Kéréseivel forduljon hozzánk bizalommal a <strong>lackomasszazs94@gmail.com</strong> címen.</p>
+    </section>
+
+    <a href="index.html" class="btn-back">Vissza a főoldalra</a>
+  </main>
+</body>
+
 </html>
