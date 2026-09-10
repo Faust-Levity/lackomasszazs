@@ -17,38 +17,6 @@
   <link rel="canonical" href="https://lackomasszazs.hu/" />
   <link rel="icon" type="image/png" href="./resources/favicon.png" />
 
-<script>
-  function loadAnalytics() {
-    if (window.analyticsLoaded) return;
-    window.analyticsLoaded = true;
-    
-    const script = document.createElement("script");
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-3ERDPHQFRP";
-    script.async = true;
-    document.head.appendChild(script);
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag("js", new Date());
-    gtag("config", "G-3ERDPHQFRP");
-    
-    document.getElementById('cookie-banner').style.display = 'none';
-  }
-
-  window.addEventListener('load', function() {
-    if (localStorage.getItem('cookieConsent') === 'true') {
-      loadAnalytics();
-    } else {
-      document.getElementById('cookie-banner').style.display = 'block';
-    }
-  });
-
-  function acceptCookies() {
-    localStorage.setItem('cookieConsent', 'true');
-    loadAnalytics();
-  }
-</script>
-
   <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -349,11 +317,11 @@
 
 <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; width:100%; background:#3f2a1d; color:#fff; padding:15px; text-align:center; z-index:10000; font-size:0.9rem;">
   Ez az oldal sütiket használ a látogatottság mérésére és az oldal hatékonyabb betöltésére. 
-  <button onclick="acceptCookies()" style="background:#25d366; color:#3f2a1d; border:none; padding:8px 15px; margin-left:15px; border-radius:4px; cursor:pointer; font-weight:700;">Elfogadom</button>
+  <button id="accept-cookies" style="background:#25d366; color:#3f2a1d; border:none; padding:8px 15px; margin-left:15px; border-radius:4px; cursor:pointer; font-weight:700;">Elfogadom</button>
   <a href="privacy.html" style="color:#fff; margin-left:10px; text-decoration:underline;">Részletek</a>
 </div>
 
-  <script src="./scripts.js" defer></script>
+  <script src="scripts/scripts.js" defer></script>
 </body>
 
 </html>
