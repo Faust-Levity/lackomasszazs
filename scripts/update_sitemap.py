@@ -11,7 +11,13 @@ from datetime import date
 import xml.etree.ElementTree as ET
 
 
-def update_sitemap(path: str) -> bool:
+URL_SOURCE_FILES = {
+    'https://lackomasszazs.hu/': {'index.html'},
+    'https://lackomasszazs.hu/privacy.html': {'privacy.html'},
+}
+
+
+def update_sitemap(path: str, changed_files: set[str] | None = None) -> bool:
     ns = { 'sm': 'http://www.sitemaps.org/schemas/sitemap/0.9' }
     ET.register_namespace('', ns['sm'])
     tree = ET.parse(path)
@@ -20,6 +26,12 @@ def update_sitemap(path: str) -> bool:
     changed = False
 
     for url in root.findall('sm:url', ns):
+        loc = url.find('sm:loc', ns)
+        if changed_files is not None and loc is not None:
+            source_files = URL_SOURCE_FILES.get(loc.text, set())
+            if not source_files.intersection(changed_files):
+                continue
+
         lastmod = url.find('sm:lastmod', ns)
         if lastmod is None:
             lastmod = ET.SubElement(url, '{http://www.sitemaps.org/schemas/sitemap/0.9}lastmod')
@@ -36,11 +48,12 @@ def update_sitemap(path: str) -> bool:
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 2:
-        print('Usage: update_sitemap.py <sitemap.xml>')
+    if len(sys.argv) < 2:
+        print('Usage: update_sitemap.py <sitemap.xml> [changed-file ...]')
         sys.exit(2)
     path = sys.argv[1]
-    updated = update_sitemap(path)
+    changed_files = set(sys.argv[2:]) or None
+    updated = update_sitemap(path, changed_files)
     if updated:
         print(f'Updated {path} lastmod to today')
         sys.exit(0)
