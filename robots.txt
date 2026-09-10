@@ -1,0 +1,8 @@
+# robots.txt for Lackó Masszázs
+# Allow all crawlers to index the site and point them to the sitemap.
+# If you later want to block specific paths (e.g. /admin), add `Disallow` rules.
+
+User-agent: *
+Disallow:
+
+Sitemap: https://lackomasszazs.hu/sitemap.xml
