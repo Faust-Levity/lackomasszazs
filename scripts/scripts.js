@@ -1,5 +1,18 @@
 let slideIndex = 0;
 
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+
+const hasConsent = localStorage.getItem("cookieConsent") === "true";
+
+gtag("consent", "default", {
+  analytics_storage: hasConsent ? "granted" : "denied",
+  ad_storage: "denied",
+  ad_user_data: "denied",
+  ad_personalization: "denied",
+  wait_for_update: 500
+});
+
 function loadAnalytics() {
   if (window.analyticsLoaded) return;
   window.analyticsLoaded = true;
@@ -9,25 +22,9 @@ function loadAnalytics() {
   script.async = true;
   document.head.appendChild(script);
 
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
   gtag("js", new Date());
-  gtag("config", "G-3ERDPHQFRP");
-
-  document.getElementById("cookie-banner").style.display = "none";
-}
-
-function loadAnalyticsAfterInteraction() {
-  const interactionEvents = ["click", "keydown", "scroll", "touchstart"];
-  const startAnalytics = function () {
-    interactionEvents.forEach(function (eventName) {
-      window.removeEventListener(eventName, startAnalytics);
-    });
-    loadAnalytics();
-  };
-
-  interactionEvents.forEach(function (eventName) {
-    window.addEventListener(eventName, startAnalytics, { once: true, passive: true });
+  gtag("config", "G-3ERDPHQFRP", {
+    anonymize_ip: true
   });
 }
 
@@ -48,20 +45,26 @@ function showSlides() {
 document.addEventListener("DOMContentLoaded", function () {
   showSlides();
 
+  loadAnalytics();
+
   const cookieBanner = document.getElementById("cookie-banner");
   const acceptCookiesButton = document.getElementById("accept-cookies");
 
-  window.addEventListener("load", function () {
-    if (localStorage.getItem("cookieConsent") === "true") {
-      cookieBanner.style.display = "none";
-      loadAnalyticsAfterInteraction();
-    } else {
-      cookieBanner.style.display = "block";
-    }
-  });
+  if (cookieBanner) {
+    cookieBanner.style.display = hasConsent ? "none" : "block";
+  }
 
-  acceptCookiesButton.addEventListener("click", function () {
-    localStorage.setItem("cookieConsent", "true");
-    loadAnalytics();
-  });
+  if (acceptCookiesButton) {
+    acceptCookiesButton.addEventListener("click", function () {
+      localStorage.setItem("cookieConsent", "true");
+      
+      gtag("consent", "update", {
+        analytics_storage: "granted"
+      });
+
+      if (cookieBanner) {
+        cookieBanner.style.display = "none";
+      }
+    });
+  }
 });
