@@ -1,11 +1,23 @@
-# Lackó Masszázs – Weboldal
+# Lackó Masszázs - Website
 
-Ez a projekt a **Lackó Masszázs** hivatalos, reszponzív bemutatkozó oldala. Az oldal célja a szolgáltatások bemutatása, az árlista közlése és a közvetlen kapcsolatfelvétel megkönnyítése.
+This project is the official, responsive web application for **Lackó Masszázs**. It is designed to present services, display location-based pricing, showcase client media, and provide direct contact options for visitors.
 
-## ✨ Főbb jellemzők
+## ✨ Key Features
 
-- **Mobil-optimalizált design**: Minden eszközön (mobil, tablet, desktop) tökéletesen megjelenik.
-- **Integrált árlista**: Szolgáltatások és településenkénti kiszállási díjak részletezése.
-- **Portfolio**: Referenciaképek és videó(k).
+* **Mobile-Optimized Layout**: Fully responsive interface tailored for smartphones, tablets, and desktop devices.
+* **Integrated Price List**: Clear breakdown of massage services and location-dependent travel fees.
+* **Media Showcase**: Embedded videos and high-quality reference images.
+* **Direct Contact Options**: Quick access for clients to request appointments.
 
-Habár nem áll fejlesztés alatt az oldal, hibajelzéseket szívesen fogadunk, ajánlom a kapcsolat felvételt a weboldalon keresztül.
+## 🛠️ Tech Stack & Performance
+
+* **Frontend**: HTML5, CSS3 / SCSS, Vanilla JavaScript
+* **Deployment & Hosting**: GitHub Pages
+* **Performance Audit**: 100/100 Desktop Google Lighthouse score across Performance, Accessibility, Best Practices, and SEO. *(Mobile performance runs at 91–95 due to explicit opt-in cookie privacy rules).*
+
+## 📌 Project Status
+
+The site is currently live and deployed at [lackomasszazs.hu](https://lackomasszazs.hu). 
+
+While the project is not under active feature development, bug reports and feedback are welcome. Feel free to open an issue or reach out via the contact information on the website.
+
