@@ -20,4 +20,3 @@ This project is the official, responsive web application for **Lackó Masszázs*
 The site is currently live and deployed at [lackomasszazs.hu](https://lackomasszazs.hu). 
 
 While the project is not under active feature development, bug reports and feedback are welcome. Feel free to open an issue or reach out via the contact information on the website.
-
